@@ -1,4 +1,4 @@
-# Writing good how-to or tutorial
+# Writing good how-to or tutorial -delete all
 
 Before you start writing, read the following materials how to write good documentation (including how-tos).
 
@@ -23,18 +23,18 @@ Don't use HTML tags unless working with videos. And try to avoid using videos un
 
 Bellow you can find the structure of IE tow-to/tutorial
 
-* [Writing good how-to or tutorial](#writing-good-how-to-or-tutorial)
-  * [Description](#description)
-    * [Overview](#overview)
-    * [General Task](#general-task)
-  * [Requirements](#requirements)
-    * [Prerequisites](#prerequisites)
-    * [Used components](#used-components)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Documentation](#documentation)
-  * [Contribution](#contribution)
-  * [Licence and Legal Information](#licence-and-legal-information)
+- [Writing good how-to or tutorial -delete all](#writing-good-how-to-or-tutorial--delete-all)
+  - [Description](#description)
+    - [Overview](#overview)
+    - [General Task](#general-task)
+  - [Requirements](#requirements)
+    - [Prerequisites](#prerequisites)
+    - [Used components](#used-components)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+  - [Contribution](#contribution)
+  - [Licence and Legal Information](#licence-and-legal-information)
 
 ## Description
 
