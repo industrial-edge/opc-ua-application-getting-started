@@ -44,14 +44,18 @@ What is the general goal/task of this how-to/tutorial?
 List the used software and hardware components that were tested with this how-to.
 Add the used components here (e.g.)
 
-* Industrial Edge App Publisher V1.0.8
-* Docker Engine 18.09.6
-* Docker Compose V2.4
-* S7 Connector V 1.0.22
-* S7 Connector Configurator V 1.0.9
-* Industrial Edge Device V 1.0.0-34
-* TIA Portal V16
-* PLC: CPU 1511 FW 2.8.3
+- Industrial Edge Management (IEM) V1.3.0-58
+- IE Databus Configurator V1.4.22
+- IE Databus V1.3.5
+- Simatic S7 Connector Configurator V1.4.9
+- Simatic S7 Connector V1.3.27
+- IE OPC UA configurator V1.0.15
+- IE OPC UA V1.0.22
+- IE Flow Creator V1.1.10
+- Industrial Edge Device V1.3.0-57
+- TIA Portal V17
+- S7-1515
+- Web browser (Mozilla or Chrome)
 
 ## Installation
 
