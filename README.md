@@ -53,7 +53,7 @@ Add the used components here (e.g.)
 - IE OPC UA V1.0.22
 - IE Flow Creator V1.1.10
 - Industrial Edge Device V1.3.0-57
-- TIA Portal V17
+- TIA Portal V16
 - S7-1515
 - Web browser (Mozilla or Chrome)
 
