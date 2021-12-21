@@ -26,7 +26,7 @@ Industrial Edge (IE) OPC-UA application acts as OPC-UA server. It connects to th
 
 In this example, data were collected from PLC with S7 connector and publish to IE Databus. From that data, in IE Flow Creator, KPIs were calculated and new custom data source is created. IE OPC-UA Application, subscribes to these to data sources and make them available to OPC-UA client like UA Expert.
 
-![task](docs/graphics/example_graphic.png)
+![task](docs/graphics/Overview.png)
 
 ## Requirements
 
