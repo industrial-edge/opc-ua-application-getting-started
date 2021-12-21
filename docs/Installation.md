@@ -35,7 +35,7 @@ Edit the settings:
 
 ![s7_connector_settings](graphics/S7_Connector_Settings.png)
 
-Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
+>Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
 
 Deploy and start the project.
 
