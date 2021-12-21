@@ -43,15 +43,15 @@ Deploy and start the project.
 
 Open the IE Flow Creator App from the IED Web UI and import the [FlowCreator.JSON](src/FlowCreator.JSON) file from the source folder.
 
-![importFlowCreator.PNG](graphics/importFlowCreator.PNG)
+![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
-![importFlow2.PNG](graphics/importFlow2.PNG)
+![importFlow2.PNG](graphics/importFlow2.png)
 
 After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
 
-![MQTTNode.PNG](graphics/MQTT_node.PNG)
+![MQTTNode.PNG](graphics/MQTT_node.png)
 
-![SecuritySetting.PNG](graphics/SecuritySetting.PNG)
+![SecuritySetting.PNG](graphics/SecuritySetting.png)
 
 
 
