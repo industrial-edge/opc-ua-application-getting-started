@@ -53,7 +53,20 @@ After importing the JSON file, the password for IE Databus must be entered in th
 
 ![SecuritySetting.PNG](graphics/SecuritySetting.png)
 
+When flow is imported, it should look like:
 
+![FlowCreator.png](graphics/FlowCreator.png)
+
+Metadata from all connectors are coming in topic `ie/m/#`.
+`Yellow` group, receives all metadata and builds `NameIDMap` global map with name-ID pairs.
+`Blue` group receives dataPoints from all connectors and builds two global maps `IDValueMap` with ID-Value and `IDTimestampMap` with ID-Timestamp values.
+`Green` group is used for setting metadata and topics for new data source. Metadata and dataPoints needs to follow common payload JSON format.
+
+![MetadataPayload.png](graphics/MetadataPayload.png)
+
+![DataPointsPayload.png](graphics/DataPointsPayload.png)
+
+Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r`.
 
 ## Create custom data source (new metadata, publish data to new topic)
 
