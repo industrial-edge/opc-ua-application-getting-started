@@ -1,71 +1,46 @@
-# Installation
+# Configuration
 
-- [Installation](#installation)
-  - [Build application](#build-application)
-    - [Cloning image](#cloning-image)
-    - [Build docker image](#build-docker-image)
-  - [Upload  App to the Industrial Edge Managment](#upload--app-to-the-industrial-edge-managment)
-    - [Connect your Industrial Edge App Publisher](#connect-your-industrial-edge-app-publisher)
-    - [Upload  App using the Industrial Edge App Publisher](#upload--app-using-the-industrial-edge-app-publisher)
-  - [Deploying of App](#deploying-of-app)
-    - [Configuring application](#configuring-application)
-    - [Add additional installation steps here, if required](#add-additional-installation-steps-here-if-required)
-      - [Additional steps](#additional-steps)
+- [Configuration](#configuration)
+  - [Configure IE Databus](#configure-ie-databus)
+  - [Configure IE S7 Connector](#configure-ie-s7-connector)
+  - [Collect data in IE Flow Creator and calculate KPIs](#collect-data-in-ie-flow-creator-and-calculate-kpis)
+  - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
+  - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
   
-## Build application
+## Configure IE Databus
 
-### Cloning image
+In your IEM open the IE Databus and launch the configurator.
+Add a user with this topic:
+`"ie/#"`
 
-- Clone or Download the source code to your engineering VM
+![ie_databus_user](graphics/IE_Databus_User.png)
 
-### Build docker image
+![ie_databus](graphics/IE_Databus.png)
 
-Add instruction how to build your application, e.g.:
+Deploy the configuration.
 
-- Open console in the source code folder
-- Use command `docker-compose build` to create the docker image.
-- This docker image can now be used to build you app with the Industrial Edge App Publisher
-- *docker images | grep scannerapp* can be used to check for the images
-- You should get a result similiar to this:
+## Configure IE S7 Connector
 
-## Upload  App to the Industrial Edge Managment
+In your IEM open the Simatic S7 Connector and launch the configurator.
 
-Please find below a short description how to publish your application in your IEM.
+Add a data source:
 
-For more detailed information please see the section for [uploading apps to the IEM](https://github.com/industrial-edge/upload-app-to-iem).
+![S7_connector_data_source](graphics/S7_Connector_Data_Source.png)
 
-### Connect your Industrial Edge App Publisher
+Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode): 
 
-- Connect your Industrial Edge App Publisher to your docker engine
-- Connect your Industrial Edge App Publisher to your Industrial Edge Managment System
+![s7_connector_config](graphics/S7_Connector_Configuration.PNG)
 
-### Upload  App using the Industrial Edge App Publisher
+Edit the settings:
 
-- Create a new application using the Industrial Publisher
-- Add a app new version
-- Import the [docker-compose](../docker-compose.yml) file using the **Import YAML** button
-- The warning `Build (sevices >> scanner-service) is not supported` can be ignored
-- **Start Upload** to transfer the app to Industrial Edge Managment
-- Further information about using the Industrial Edge App Publisher can be found in the [IE Hub](https://iehub.eu1.edge.siemens.cloud/documents/appPublisher/en/start.html)
+![s7_connector_settings](graphics/S7_Connector_Settings.png)
 
-## Deploying of App
+Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
 
-### Configuring application
+Deploy and start the project.
 
-If your app needs additional configuration you can add further description here, e.g. [param.json](../cfg-data/param.json)
+## Collect data in IE Flow Creator and calculate KPIs
 
-```json
-{
-    "Parameter1": "Siemens AG",
-    "Parameter2": "edge",
-    "Parameter3": "edge"
-}
-```
+## Create custom data source (new metadata, publish data to new topic)
 
-Add description of the configuration here:
-
-### Add additional installation steps here, if required
-
-#### Additional steps
-
-Add description here
+## Install and configure OPC UA configurator and application
