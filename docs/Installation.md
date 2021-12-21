@@ -31,7 +31,7 @@ Add needed tags (since we want to write variable values into the PLC, set "Read 
 
 ![s7_connector_config](graphics/S7_Connector_Configuration.png)
 
-Edit the settings:
+Edit the settings for Databus in upper right corner:
 
 ![s7_connector_settings](graphics/S7_Connector_Settings.png)
 
@@ -40,6 +40,20 @@ Edit the settings:
 Deploy and start the project.
 
 ## Collect data in IE Flow Creator and calculate KPIs
+
+Open the IE Flow Creator App from the IED Web UI and import the [FlowCreator.JSON](src/FlowCreator.JSON) file from the source folder.
+
+![importFlowCreator.PNG](graphics/importFlowCreator.PNG)
+
+![importFlow2.PNG](graphics/importFlow2.PNG)
+
+After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
+
+![MQTTNode.PNG](graphics/MQTT_node.PNG)
+
+![SecuritySetting.PNG](graphics/SecuritySetting.PNG)
+
+
 
 ## Create custom data source (new metadata, publish data to new topic)
 
