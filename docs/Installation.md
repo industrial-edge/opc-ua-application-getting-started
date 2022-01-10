@@ -70,4 +70,8 @@ Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints
 
 ## Create custom data source (new metadata, publish data to new topic)
 
+**Orange** group in Flow Creator, calculates KPI when new data comes. Then, it formats the data in JSON payload format and sends to topic `ie/d/j/simatic/v1/opcua1/dp/r`.
+
+![KPI_JSON.png](graphics/KPI_JSON.png)
+
 ## Install and configure OPC UA configurator and application
