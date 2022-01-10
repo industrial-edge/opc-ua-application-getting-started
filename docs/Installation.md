@@ -67,6 +67,9 @@ Metadata from all connectors are coming in topic `ie/m/#`.
 ![DataPointsPayload.png](graphics/DataPointsPayload.png)
 
 Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r`.
+Metadata MQTT node should be retained.
+
+![RetainMetadata.png](graphics/RetainMetadata.png)
 
 ## Create custom data source (new metadata, publish data to new topic)
 
