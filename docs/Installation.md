@@ -78,3 +78,25 @@ Metadata MQTT node should be retained.
 ![KPI_JSON.png](graphics/KPI_JSON.png)
 
 ## Install and configure OPC UA configurator and application
+
+When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management, in Data Connections.
+
+![OPCUAStatus.png](graphics/OPCUAStatus.png)
+
+Open "Data Source" tab and add 2 sources, SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click "Deploy" or click "Add Data Source" icon to reflect the changes on the corresponding data points.
+
+![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
+
+In "Data Points" tab, you can view and select all data points from configured data sources.
+
+![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
+
+For testing, in "Security" tab, put Security to **None**. In "User Management" select **Enable guest access**. Later, configure it according your demands.
+
+![OPCUASecurity.png](graphics/OPCUASecurity.png)
+
+![OPCUAUser.png](graphics/OPCUAUser.png)
+
+Finally click **Deploy**.
+
+When everything finishes, data points will be available for OPC UA clients.
