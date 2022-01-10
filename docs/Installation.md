@@ -83,7 +83,7 @@ When previous steps are completed and KPI is calculated, OPC UA needs to be conf
 
 ![OPCUAStatus.png](graphics/OPCUAStatus.png)
 
-Open "Data Source" tab and add 2 sources, SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click "Deploy" or click "Add Data Source" icon to reflect the changes on the corresponding data points.
+Open "Data Source" tab and add 2 sources, SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
 ![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
 
