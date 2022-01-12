@@ -41,7 +41,7 @@ Deploy and start the project.
 
 ## Collect data in IE Flow Creator and calculate KPIs
 
-Open the IE Flow Creator App from the IED Web UI and import the [flow.json](src/flow.json) file from the source folder.
+Open the IE Flow Creator App from the IED Web UI and import the [flow.json](../src/flow.json) file from the source folder.
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
