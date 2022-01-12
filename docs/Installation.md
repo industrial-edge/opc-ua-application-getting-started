@@ -41,7 +41,7 @@ Deploy and start the project.
 
 ## Collect data in IE Flow Creator and calculate KPIs
 
-Open the IE Flow Creator App from the IED Web UI and import the [FlowCreator.JSON](src/FlowCreator.JSON) file from the source folder.
+Open the IE Flow Creator App from the IED Web UI and import the [flow.json](src/flow.json) file from the source folder.
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
@@ -60,20 +60,20 @@ When flow is imported, it should look like:
 Metadata from all connectors are coming in topic `ie/m/#`.
 **Yellow** group, receives all metadata and builds `NameIDMap` global map with name-ID pairs.
 **Blue** group receives dataPoints from all connectors and builds two global maps `IDValueMap` with ID-Value and `IDTimestampMap` with ID-Timestamp values.
-**Green** group is used for setting metadata and topics for new data source. Metadata and dataPoints needs to follow common payload JSON format.
+**Green** group is used for setting metadata for new data source. Metadata and dataPoints needs to follow common payload JSON format.
 
 ![MetadataPayload.png](graphics/MetadataPayload.png)
 
 ![DataPointsPayload.png](graphics/DataPointsPayload.png)
 
-Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r`.
+Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
 Metadata MQTT node should be retained.
 
 ![RetainMetadata.png](graphics/RetainMetadata.png)
 
 ## Create custom data source (new metadata, publish data to new topic)
 
-**Orange** group in Flow Creator, calculates KPI when new data comes. Then, it formats the data in JSON payload format and sends to topic `ie/d/j/simatic/v1/opcua1/dp/r`.
+**Orange** group in Flow Creator, calculates KPI when new data comes. Then, it formats the data in JSON payload format and sends to topic `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
 
 ![KPI_JSON.png](graphics/KPI_JSON.png)
 
