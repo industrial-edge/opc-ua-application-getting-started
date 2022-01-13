@@ -2,7 +2,7 @@
 
 - [Configuration](#configuration)
   - [Configure IE Databus](#configure-ie-databus)
-  - [Configure IE S7 Connector](#configure-ie-s7-connector)
+  - [Configure IE SIMATIC S7 Connector](#configure-ie-simatic-s7-connector)
   - [Collect data in IE Flow Creator and calculate KPIs](#collect-data-in-ie-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
   - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
@@ -19,9 +19,9 @@ Add a user with this topic:
 
 Deploy the configuration.
 
-## Configure IE S7 Connector
+## Configure IE SIMATIC S7 Connector
 
-In your IEM open the Simatic S7 Connector and launch the configurator.
+In your IEM open the SIMATIC S7 Connector and launch the configurator.
 
 Add a data source:
 
@@ -79,11 +79,11 @@ Metadata MQTT node should be retained.
 
 ## Install and configure OPC UA configurator and application
 
-When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management, in Data Connections.
+When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management -> Data Connections.
 
 ![OPCUAStatus.png](graphics/OPCUAStatus.png)
 
-Open "Data Source" tab and add 2 sources, SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
+First, configure data source connection under "Data Source" tab. Insert SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
 ![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
 
@@ -91,7 +91,7 @@ In "Data Points" tab, you can view and select all data points from configured da
 
 ![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
 
-For testing, in "Security" tab, put Security to **None**. In "User Management" select **Enable guest access**. Later, configure it according your demands.
+Next, select security policy under "Security" tab. For now, select security to **None** and **Generate self signed certificate**. In "User Management" you can create a OPC UA users. Select **Enable guest access**. Later, configure security according your demands.
 
 ![OPCUASecurity.png](graphics/OPCUASecurity.png)
 
@@ -99,4 +99,7 @@ For testing, in "Security" tab, put Security to **None**. In "User Management" s
 
 Finally click **Deploy**.
 
-When everything finishes, data points will be available for OPC UA clients.
+After deployment finishes, data points will be available for OPC UA clients.
+You can use UE Expert or second IED to test is it working. On second IED, data is obtained via SIMATIC S7 Connector (OPC-UA Connector) as it is described previously.
+
+![UA_Expert.png](graphics/UA_Expert.png)
