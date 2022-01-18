@@ -31,7 +31,7 @@ Add needed tags (since we want to write variable values into the PLC, set "Read 
 
 ![s7_connector_config](graphics/S7_Connector_Configuration.png)
 
->Hint: Use the same tag names to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
+>Hint: Use the same tag names as in above picture. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
 Edit the settings for Databus in upper right corner:
 
