@@ -20,11 +20,11 @@ This example shows how to use Industrial Edge OPC UA Application.
 
 ### Overview
 
-Industrial Edge (IE) OPC-UA application acts as OPC-UA server. It connects to the data source and extract the data using Industrial Edge Databus (IE Databus). The data source can be SIMATIC S7 Connector, PROFINET IO Connector, Modbus TCP Connector and Ethernet/IP Connector. Customized data sources can also be created. Then connected data, makes available for OPC-UA clients.
+Industrial Edge (IE) OPC UA application acts as OPC UA server. It connects to the data source and extract the data using Industrial Edge Databus (IE Databus). The data source can be SIMATIC S7 Connector, PROFINET IO Connector, Modbus TCP Connector and Ethernet/IP Connector. Customized data sources can also be created. When data are connected and server configured, data becomes available for OPC UA clients.
 
 ### General Task
 
-In this example, data were collected from PLC with S7 connector and publish to IE Databus. From that data, in IE Flow Creator, KPIs were calculated and new custom data source is created. IE OPC-UA Application, subscribes to these two data sources and make them available for OPC-UA clients like UA Expert or another IED.
+In this example, data were collected from PLC with S7 connector and publish to IE Databus. From that data, in IE Flow Creator, KPIs were calculated and new custom data source is created. IE OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
 
 ![task](docs/graphics/Overview.png)
 
@@ -32,14 +32,14 @@ In this example, data were collected from PLC with S7 connector and publish to I
 
 ### Prerequisites
 
-- Access to an Industrial Edge Management System (IEM).
-- Onboarded Industial Edge Device (IED) on IEM.
-- Installed System Configurators for Databus.
-- Installed System Apps Databus.
-- Installed and running all connectors and configurators (S7 conector, PROFINET IO, ModbusTCP) that Application uses.
-- Installed OPC UA configurator and OPC UA Application.
-- Installed IE Flow Creator.
-- Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62).
+- Access to an Industrial Edge Management System (IEM)
+- Onboarded Industial Edge Device (IED) on IEM
+- Installed System Configurators for Databus
+- Installed System Apps Databus
+- Installed and running all connectors and configurators (S7 conector, PROFINET IO, ModbusTCP) that Application uses
+- Installed OPC UA configurator and OPC UA Application
+- Installed IE Flow Creator
+- Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
 
@@ -64,15 +64,15 @@ The used TIA Portal project can be found in the [miscellenous repository](https:
 
 You can find the further information about the following steps in the [docs](docs/Installation.md)
 
-- Install and configure IE Databus.
-- Install and configure IE S7 Connector.
-- Collect data in IE Flow Creator and calculate KPIs.
-- Create custom data source (new metadata, publish data to new topic).
-- Install and configure OPC UA configurator and application.
+- Configure IE Databus
+- Configure IE S7 Connector
+- Collect data in IE Flow Creator and calculate KPIs
+- Create custom data source (new metadata, publish data to new topic)
+- Install and configure OPC UA configurator and application
 
 ## Usage
 
-When previous steps are configured correctly, data is available in OPC-UA Application. Use UE Expert to connect to IE OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:48010`.
+When previous steps are configured correctly, data is available in OPC UA Application. Use UE Expert to connect to IE OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:48010`.
 
 ## Documentation
 

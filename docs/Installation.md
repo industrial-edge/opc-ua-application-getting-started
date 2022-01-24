@@ -102,6 +102,6 @@ Next, select security policy under "Security" tab. For now, select security to *
 Finally click **Deploy**.
 
 After deployment finishes, data points will be available for OPC UA clients.
-You can use UE Expert or second IED to test is it working. On second IED, data is obtained via SIMATIC S7 Connector (OPC-UA Connector) as it is described previously.
+You can use UE Expert or second IED to test is it working. On second IED, data is obtained via SIMATIC S7 Connector (OPC UA Connector) as it is described previously.
 
 ![UA_Expert.png](graphics/UA_Expert.png)
