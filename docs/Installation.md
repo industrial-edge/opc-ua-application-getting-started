@@ -31,7 +31,7 @@ Add needed tags (since we want to write variable values into the PLC, set "Read 
 
 ![s7_connector_config](graphics/S7_Connector_Configuration.png)
 
->Hint: Use the same tag names as in above picture. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
+>Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
 Edit the settings for Databus in upper right corner:
 
@@ -49,33 +49,39 @@ Open the IE Flow Creator App from the IED Web UI and import the [flows.json](../
 
 ![importFlow2.PNG](graphics/importFlow2.png)
 
+When flow is imported, it should look like:
+
+![FlowCreator.png](graphics/FlowCreator.png)
+
 After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
 
 ![MQTTNode.PNG](graphics/MQTT_node.png)
 
 ![SecuritySetting.PNG](graphics/SecuritySetting.png)
 
-When flow is imported, it should look like:
+Metadata from all connectors are coming in topic `ie/m/#`. **Yellow** group, receives all metadata and builds `NameIDMap` global map with name-ID pairs. Enabling debug node, metadata can be visible in debug window.
 
-![FlowCreator.png](graphics/FlowCreator.png)
+>HINT: Metadata are retentive and are not pushed constantly. They are published on establishing connection or on change.
 
-Metadata from all connectors are coming in topic `ie/m/#`.
-**Yellow** group, receives all metadata and builds `NameIDMap` global map with name-ID pairs.
-**Blue** group receives dataPoints from all connectors and builds two global maps `IDValueMap` with ID-Value and `IDTimestampMap` with ID-Timestamp values.
-**Green** group is used for setting metadata for new data source. Metadata and dataPoints needs to follow common payload JSON format.
-
-![MetadataPayload.png](graphics/MetadataPayload.png)
-
-![DataPointsPayload.png](graphics/DataPointsPayload.png)
-
-Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
-Metadata MQTT node should be retained.
-
-![RetainMetadata.png](graphics/RetainMetadata.png)
+**Blue** group receives dataPoints from all connectors and builds two global maps `IDValueMap` with ID-Value and `IDTimestampMap` with ID-Timestamp values. These maps stores only the last value.
 
 ## Create custom data source (new metadata, publish data to new topic)
 
-**Orange** group in Flow Creator, calculates KPI when new data comes. Then, it formats the data in JSON payload format and sends to topic `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
+**Green** group is used for setting metadata for new data source. Metadata and dataPoints needs to follow common payload JSON format. Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`. In inject node "set", you can customize your new metadata topic. There, you need to add name and type of connector, topic and definitions for data points. Because of the way of building global maps and storing data, IDs of new data points should be unique. Here, we are using "ProductionQuality" to calculate production KPI and "test" to test connection. When you finish, press "set". This needs to be done at least ones for flow to work. To delete metadata topic, click on "reset" node.
+
+>Hint: Metadata MQTT node should be retained.
+
+![MetadataPayload.png](graphics/MetadataPayload.png)
+
+![RetainMetadata.png](graphics/RetainMetadata.png)
+
+**Orange** group in Flow Creator, calculates KPI. When new "ProducedBottles" value comes, "ProductionQuality" KPI is calculated with this formula:
+
+`"ProductionQuality" = 100 - ("FaultyBottles" / "ProducedBottles") * 100`
+
+Then, it formats the data in common payload format and sends it to topic `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
+
+![DataPointsPayload.png](graphics/DataPointsPayload.png)
 
 ![KPI_JSON.png](graphics/KPI_JSON.png)
 
@@ -85,23 +91,23 @@ When previous steps are completed and KPI is calculated, OPC UA needs to be conf
 
 ![OPCUAStatus.png](graphics/OPCUAStatus.png)
 
-First, configure data source connection under "Data Source" tab. Insert SIMATIC S7 connector and new custom data source with KPI values. When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
+First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like SIMATIC S7 connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
 ![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
 
-In "Data Points" tab, you can view and select all data points from configured data sources.
+In "Data Points" tab, you can view and select all data points from configured data sources that needs to be available for external OPC UA clients.
 
 ![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
 
-Next, select security policy under "Security" tab. For now, select security to **None** and **Generate self signed certificate**. In "User Management" you can create a OPC UA users. Select **Enable guest access**. Later, configure security according your demands.
+Next, select security policy under "Security" tab. For now, select security to **None**, deselect other 2 options and choose **Generate self signed certificate**.
 
 ![OPCUASecurity.png](graphics/OPCUASecurity.png)
+
+In "User Management" you can create a OPC UA users. Select **Enable guest access** and deselect- "User name and password authentication". Later, configure security according your demands.
 
 ![OPCUAUser.png](graphics/OPCUAUser.png)
 
 Finally click **Deploy**.
 
 After deployment finishes, data points will be available for OPC UA clients.
-You can use UE Expert or second IED to test is it working. On second IED, data is obtained via SIMATIC S7 Connector (OPC UA Connector) as it is described previously.
-
-![UA_Expert.png](graphics/UA_Expert.png)
+You can use UE Expert or second IED to test is it working. 
