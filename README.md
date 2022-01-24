@@ -76,6 +76,8 @@ When previous steps are configured correctly, data are available in OPC UA Appli
 
 ![UA_Expert.png](docs/graphics/UA_Expert.png)
 
+![UA_Expert.png](docs/graphics/SecondIED.png)
+
 ## Documentation
 
 You can find further documentation and help in the following links

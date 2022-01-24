@@ -108,6 +108,3 @@ In "User Management" you can create a OPC UA users. Select **Enable guest access
 ![OPCUAUser.png](graphics/OPCUAUser.png)
 
 Finally click **Deploy**.
-
-After deployment finishes, data points will be available for OPC UA clients.
-You can use UE Expert or second IED to test is it working. 
