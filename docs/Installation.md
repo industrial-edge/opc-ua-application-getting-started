@@ -1,71 +1,110 @@
-# Installation
+# Configuration
 
-- [Installation](#installation)
-  - [Build application](#build-application)
-    - [Cloning image](#cloning-image)
-    - [Build docker image](#build-docker-image)
-  - [Upload  App to the Industrial Edge Managment](#upload--app-to-the-industrial-edge-managment)
-    - [Connect your Industrial Edge App Publisher](#connect-your-industrial-edge-app-publisher)
-    - [Upload  App using the Industrial Edge App Publisher](#upload--app-using-the-industrial-edge-app-publisher)
-  - [Deploying of App](#deploying-of-app)
-    - [Configuring application](#configuring-application)
-    - [Add additional installation steps here, if required](#add-additional-installation-steps-here-if-required)
-      - [Additional steps](#additional-steps)
+- [Configuration](#configuration)
+  - [Configure IE Databus](#configure-ie-databus)
+  - [Configure IE SIMATIC S7 Connector](#configure-ie-simatic-s7-connector)
+  - [Collect data in IE Flow Creator and calculate KPIs](#collect-data-in-ie-flow-creator-and-calculate-kpis)
+  - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
+  - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
   
-## Build application
+## Configure IE Databus
 
-### Cloning image
+In your IEM open the IE Databus and launch the configurator.
+Add a user with this topic:
+`"ie/#"`
 
-- Clone or Download the source code to your engineering VM
+![ie_databus_user](graphics/IE_Databus_User.png)
 
-### Build docker image
+![ie_databus](graphics/IE_Databus.png)
 
-Add instruction how to build your application, e.g.:
+Deploy the configuration.
 
-- Open console in the source code folder
-- Use command `docker-compose build` to create the docker image.
-- This docker image can now be used to build you app with the Industrial Edge App Publisher
-- *docker images | grep scannerapp* can be used to check for the images
-- You should get a result similiar to this:
+## Configure IE SIMATIC S7 Connector
 
-## Upload  App to the Industrial Edge Managment
+In your IEM open the SIMATIC S7 Connector and launch the configurator.
 
-Please find below a short description how to publish your application in your IEM.
+Add a data source:
 
-For more detailed information please see the section for [uploading apps to the IEM](https://github.com/industrial-edge/upload-app-to-iem).
+![S7_connector_data_source](graphics/S7_Connector_Data_Source.png)
 
-### Connect your Industrial Edge App Publisher
+Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
-- Connect your Industrial Edge App Publisher to your docker engine
-- Connect your Industrial Edge App Publisher to your Industrial Edge Managment System
+![s7_connector_config](graphics/S7_Connector_Configuration.png)
 
-### Upload  App using the Industrial Edge App Publisher
+>Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
-- Create a new application using the Industrial Publisher
-- Add a app new version
-- Import the [docker-compose](../docker-compose.yml) file using the **Import YAML** button
-- The warning `Build (sevices >> scanner-service) is not supported` can be ignored
-- **Start Upload** to transfer the app to Industrial Edge Managment
-- Further information about using the Industrial Edge App Publisher can be found in the [IE Hub](https://iehub.eu1.edge.siemens.cloud/documents/appPublisher/en/start.html)
+Edit the settings for Databus in upper right corner:
 
-## Deploying of App
+![s7_connector_settings](graphics/S7_Connector_Settings.png)
 
-### Configuring application
+>Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
 
-If your app needs additional configuration you can add further description here, e.g. [param.json](../cfg-data/param.json)
+Deploy and start the project.
 
-```json
-{
-    "Parameter1": "Siemens AG",
-    "Parameter2": "edge",
-    "Parameter3": "edge"
-}
-```
+## Collect data in IE Flow Creator and calculate KPIs
 
-Add description of the configuration here:
+Open the IE Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
 
-### Add additional installation steps here, if required
+![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
-#### Additional steps
+![importFlow2.PNG](graphics/importFlow2.png)
 
-Add description here
+When flow is imported, it should look like:
+
+![FlowCreator.png](graphics/FlowCreator.png)
+
+After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
+
+![MQTTNode.PNG](graphics/MQTT_node.png)
+
+![SecuritySetting.PNG](graphics/SecuritySetting.png)
+
+Metadata from all connectors are coming in topic `ie/m/#`. **Yellow** group, receives all metadata and builds `NameIDMap` global map with name-ID pairs. Enabling debug node, metadata can be visible in debug window.
+
+>HINT: Metadata are retentive and are not pushed constantly. They are published on establishing connection or on change.
+
+**Blue** group receives dataPoints from all connectors and builds two global maps `IDValueMap` with ID-Value and `IDTimestampMap` with ID-Timestamp values. These maps stores only the last value.
+
+## Create custom data source (new metadata, publish data to new topic)
+
+**Green** group is used for setting metadata for new data source. Metadata and dataPoints needs to follow common payload JSON format. Topic for new metadata is `ie/m/j/simatic/v1/opcua1/dp` and topic for dataPoints is `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`. In inject node "set", you can customize your new metadata topic. There, you need to add name and type of connector, topic and definitions for data points. Because of the way of building global maps and storing data, IDs of new data points should be unique. Here, we are using "ProductionQuality" to calculate production KPI and "test" to test connection. When you finish, press "set". This needs to be done at least ones for flow to work. To delete metadata topic, click on "reset" node.
+
+>Hint: Metadata MQTT node should be retained.
+
+![MetadataPayload.png](graphics/MetadataPayload.png)
+
+![RetainMetadata.png](graphics/RetainMetadata.png)
+
+**Orange** group in Flow Creator, calculates KPI. When new "ProducedBottles" value comes, "ProductionQuality" KPI is calculated with this formula:
+
+`"ProductionQuality" = 100 - ("FaultyBottles" / "ProducedBottles") * 100`
+
+Then, it formats the data in common payload format and sends it to topic `ie/d/j/simatic/v1/opcua1/dp/r/OPCUA/default`.
+
+![DataPointsPayload.png](graphics/DataPointsPayload.png)
+
+![KPI_JSON.png](graphics/KPI_JSON.png)
+
+## Install and configure OPC UA configurator and application
+
+When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management -> Data Connections.
+
+![OPCUAStatus.png](graphics/OPCUAStatus.png)
+
+First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like SIMATIC S7 connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
+
+![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
+
+In "Data Points" tab, you can view and select all data points from configured data sources that needs to be available for external OPC UA clients.
+
+![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
+
+Next, select security policy under "Security" tab. For now, select security to **None**, deselect other 2 options and choose **Generate self signed certificate**.
+
+![OPCUASecurity.png](graphics/OPCUASecurity.png)
+
+In "User Management" you can create a OPC UA users. Select **Enable guest access** and deselect- "User name and password authentication". Later, configure security according your demands.
+
+![OPCUAUser.png](graphics/OPCUAUser.png)
+
+Finally click **Deploy**.

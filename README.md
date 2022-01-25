@@ -1,102 +1,96 @@
-# Writing good how-to or tutorial
+# OPC UA Application example
 
-Before you start writing, read the following materials how to write good documentation (including how-tos).
+This example shows how to use Industrial Edge OPC UA Application.
 
-* [Google Developer style guide](https://developers.google.com/style)
-* [Technical writing Courses](https://developers.google.com/tech-writing)
-* [Microsoft Writing Style Guide](https://docs.microsoft.com/cs-cz/style-guide/welcome/)
-
-Then decide: Are you writing a tutorial or a how-to guide?
-
-[Divio](https://documentation.divio.com/) explains the difference  (Note that this applies for software documentation for application developers)
-
-* Tutorials are lessons that take the reader by the hand through a series of steps to complete a project of some kind. They are what your project needs in order to show a beginner that they can achieve something with it. https://documentation.divio.com/tutorials/
-* How-to guides take the reader through the steps required to solve a real-world problem
-
-Each have a different writing style. Tutorials must be bullet proof (no unexpected behavior) https://documentation.divio.com/how-to-guides/
-
-Note: Try to write the tutorials and how-tos as a standalone html page, ready to be generated using Static site generator [MkDocs](https://www.mkdocs.org/). When referencing code examples or files, use the full URL of the git repository. We want to reuse these how-tos and tutorials in Documentation website.
-
-Don't explain concepts. [It gets in a way of action](https://documentation.divio.com/how-to-guides/#don-t-explain-concepts).  
-
-Don't use HTML tags unless working with videos. And try to avoid using videos unless absolutely necessary. Don't upload videos to Git repository.
-
-Bellow you can find the structure of IE tow-to/tutorial
-
-* [Writing good how-to or tutorial](#writing-good-how-to-or-tutorial)
-  * [Description](#description)
-    * [Overview](#overview)
-    * [General Task](#general-task)
-  * [Requirements](#requirements)
-    * [Prerequisites](#prerequisites)
-    * [Used components](#used-components)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Documentation](#documentation)
-  * [Contribution](#contribution)
-  * [Licence and Legal Information](#licence-and-legal-information)
+- [OPC UA Application example](#opc-ua-application-example)
+  - [Description](#description)
+    - [Overview](#overview)
+    - [General Task](#general-task)
+  - [Requirements](#requirements)
+    - [Prerequisites](#prerequisites)
+    - [Used components](#used-components)
+    - [TIA Project](#tia-project)
+  - [Configuration steps](#configuration-steps)
+  - [Usage](#usage)
+  - [Documentation](#documentation)
+  - [Contribution](#contribution)
+  - [License and Legal Information](#license-and-legal-information)
 
 ## Description
 
 ### Overview
 
-Why has been this how-to/tutorial created? What is the purpose?
+Industrial Edge (IE) OPC UA application acts as OPC UA server. It connects to the data source and extract the data using Industrial Edge Databus (IE Databus). The data source can be SIMATIC S7 Connector, PROFINET IO Connector, Modbus TCP Connector and Ethernet/IP Connector. Customized data sources can also be created. When data are connected and server configured, data becomes available for OPC UA clients.
 
 ### General Task
 
-What is the general goal/task of this how-to/tutorial?
+In this example, data were collected from PLC with S7 connector and publish to IE Databus. From that data, in IE Flow Creator, KPIs were calculated and new custom data source is created. IE OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
 
-![task](docs/graphics/example_graphic.png)
+![task](docs/graphics/Overview.png)
 
 ## Requirements
 
 ### Prerequisites
 
-What are the requirements on the user knowledge, HW components before starting the how-to?
+- Access to an Industrial Edge Management System (IEM)
+- Onboarded Industial Edge Device (IED) on IEM
+- Installed System Configurators for Databus
+- Installed System Apps Databus
+- Installed and running all connectors and configurators (S7 conector, PROFINET IO, ModbusTCP) that Application uses
+- Installed OPC UA configurator and OPC UA Application
+- Installed IE Flow Creator
+- Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
 
-List the used software and hardware components that were tested with this how-to.
-Add the used components here (e.g.)
+- Industrial Edge Management (IEM) V1.3.0-58
+- IE Databus Configurator V1.4.22
+- IE Databus V1.3.5
+- Simatic S7 Connector Configurator V1.4.9
+- Simatic S7 Connector V1.3.27
+- IE OPC UA configurator V1.0.15
+- IE OPC UA V1.0.22
+- IE Flow Creator V1.1.10
+- Industrial Edge Device V1.3.0-57
+- TIA Portal V16
+- PLC S7-1515
+- Web browser (Mozilla or Chrome)
 
-* Industrial Edge App Publisher V1.0.8
-* Docker Engine 18.09.6
-* Docker Compose V2.4
-* S7 Connector V 1.0.22
-* S7 Connector Configurator V 1.0.9
-* Industrial Edge Device V 1.0.0-34
-* TIA Portal V16
-* PLC: CPU 1511 FW 2.8.3
+### TIA Project
 
-## Installation
+The used TIA Portal project can be found in the [miscellenous repository](https://github.com/industrial-edge/miscellaneous/tree/main/tank%20application) and is also used for several further application examples.
 
-How to install/run this application example? (i.e. how to deploy it to Industrial Edge device?) How to build this application? How to set up configurations in IE?
+## Configuration steps
 
-To keep the readme.md file as short as possible please add more detailed information in the docs folder.
+You can find the further information about the following steps in the [docs](docs/Installation.md)
 
-* [Build application](docs/Installation.md#build-application)
+- Configure IE Databus
+- Configure IE S7 Connector
+- Collect data in IE Flow Creator and calculate KPIs
+- Create custom data source (new metadata, publish data to new topic)
+- Install and configure OPC UA configurator and application
 
 ## Usage
 
-When the app is installed, how can I use it? Usually some basic UI description to prove that the app is working correctly.
+When previous steps are configured correctly, data are available in OPC UA Application. Use UE Expert to connect to IE OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:48010`. You can also use second IED. Then data is obtained via SIMATIC S7 Connector (OPC UA Connector).
+
+![UA_Expert.png](docs/graphics/UA_Expert.png)
+
+![UA_Expert.png](docs/graphics/SecondIED.png)
 
 ## Documentation
 
-Add links to documentation. Either on external URL or in the doc folder. Please use always link to a file not to a directory (it doesn't work with static site generator engines).
-
-Add these links:
-
 You can find further documentation and help in the following links
 
-* [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
-* [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
-* [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
-* [Industrial Edge GitHub page](https://github.com/industrial-edge)
+- [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
+- [Industrial Edge Forum](https://www.siemens.com/industrial-edge-forum)
+- [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
+- [Industrial Edge GitHub page](https://github.com/industrial-edge)
 
 ## Contribution
 
 Thank you for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section. Everybody is free to propose any changes to this repository using Pull Requests.
 
-## Licence and Legal Information
+## License and Legal Information
 
 Please read the [Legal information](LICENSE.md).
