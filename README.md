@@ -96,4 +96,4 @@ If you are interested in contributing via Pull Request, please check the [Contri
 
 ## License and Legal Information
 
-Please read the [Legal information](LICENSE.md).
+Please read the [Legal information](LICENSE.txt).
