@@ -37,24 +37,20 @@ In this example, data were collected from PLC with OPC UA connector and publish 
 - Onboarded Industial Edge Device (IED) on IEM
 - Installed System Configurators for Databus
 - Installed System Apps Databus
-- Installed and running all connectors and configurators (S7 conector, PROFINET IO, ModbusTCP) that Application uses
+- Installed and running all connectors and configurators (OPC UA Connector, PROFINET IO, ModbusTCP) that Application uses
 - Installed OPC UA configurator and OPC UA Application
-- Installed IE Flow Creator
+- Installed Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
 
-- Industrial Edge Management (IEM) V1.3.0-58
-- IE Databus Configurator V1.4.22
-- IE Databus V1.3.5
-- Simatic S7 Connector Configurator V1.4.9
-- Simatic S7 Connector V1.3.27
-- IE OPC UA configurator V1.0.15
-- IE OPC UA V1.0.22
-- IE Flow Creator V1.1.10
-- Industrial Edge Device V1.3.0-57
-- TIA Portal V16
-- PLC S7-1515
+- Industrial Edge Management (IEM) V1.5.2-4
+- Databus V2.1.0
+- OPC UA Connector V1.8.1
+- Flow Creator V1.12.0
+- Industrial Edge Device V1.08.0-6
+- TIA Portal V17
+- PLC S7-1513
 - Web browser (Mozilla or Chrome)
 
 ### TIA Project
