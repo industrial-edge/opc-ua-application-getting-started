@@ -26,7 +26,8 @@ Industrial Edge OPC UA application acts as OPC UA server. It connects to the dat
 
 In this example, data were collected from PLC with OPC UA connector and publish to Databus. From that data, in Flow Creator, KPIs were calculated and new custom data source is created. OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
 
-![task](docs/graphics/Opcua overvie.PNG)
+![Opcua overvie.PNG](docs/graphics/Opcuaovervie.PNG)
+
 
 ## Requirements
 
