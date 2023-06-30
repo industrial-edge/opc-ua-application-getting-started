@@ -20,11 +20,11 @@ This example shows how to use Industrial Edge OPC UA Application.
 
 ### Overview
 
-Industrial Edge (IE) OPC UA application acts as OPC UA server. It connects to the data source and extract the data using Industrial Edge Databus (IE Databus). The data source can be SIMATIC S7 Connector, PROFINET IO Connector, Modbus TCP Connector and Ethernet/IP Connector. Customized data sources can also be created. When data are connected and server configured, data becomes available for OPC UA clients.
+Industrial Edge OPC UA application acts as OPC UA server. It connects to the data source and extract the data using Industrial Edge Databus (Databus). The data source can be OPC UA Connector, PROFINET IO Connector, Modbus TCP Connector and Ethernet/IP Connector. Customized data sources can also be created. When data are connected and server configured, data becomes available for OPC UA clients.
 
 ### General Task
 
-In this example, data were collected from PLC with S7 connector and publish to IE Databus. From that data, in IE Flow Creator, KPIs were calculated and new custom data source is created. IE OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
+In this example, data were collected from PLC with OPC UA connector and publish to Databus. From that data, in Flow Creator, KPIs were calculated and new custom data source is created. OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
 
 ![task](docs/graphics/Overview.png)
 
