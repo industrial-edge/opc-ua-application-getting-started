@@ -29,7 +29,7 @@ Add a data source:
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
-![s7_connector_config](graphics/S7_Connector_Configuration.png)
+![OPCUAaddtags](graphics/OPCUAaddtags.PNG)
 
 >Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
