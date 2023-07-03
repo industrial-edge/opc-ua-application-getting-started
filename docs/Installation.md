@@ -19,9 +19,9 @@ Add a user with this topic:
 
 Deploy the configuration.
 
-## Configure IE SIMATIC S7 Connector
+## Configure OPC UA Connector
 
-In your IEM open the SIMATIC S7 Connector and launch the configurator.
+In your IEM open the OPC UA Connector and launch the configurator.
 
 Add a data source:
 
