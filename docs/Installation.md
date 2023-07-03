@@ -41,7 +41,7 @@ Edit the settings for Databus in upper right corner:
 
 Deploy and start the project.
 
-## Collect data in IE Flow Creator and calculate KPIs
+## Collect data in Flow Creator and calculate KPIs
 
 Open the IE Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
 
