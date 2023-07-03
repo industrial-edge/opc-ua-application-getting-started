@@ -35,7 +35,7 @@ Add needed tags (since we want to write variable values into the PLC, set "Read 
 
 Edit the settings for Databus in upper right corner:
 
-![s7_connector_settings](graphics/S7_Connector_Settings.png)
+![OPCUASETTINGS](graphics/OPCUASETTINGS.PNG)
 
 >Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
 
