@@ -9,7 +9,7 @@
   
 ## Configure IE Databus
 
-In your IEM open the IE Databus and launch the configurator.
+In your IEM open the Databus and launch the configurator.
 Add a user with this topic:
 `"ie/#"`
 
