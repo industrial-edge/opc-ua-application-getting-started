@@ -1,9 +1,9 @@
 # Configuration
 
 - [Configuration](#configuration)
-  - [Configure IE Databus](#configure-ie-databus)
-  - [Configure IE SIMATIC S7 Connector](#configure-ie-simatic-s7-connector)
-  - [Collect data in IE Flow Creator and calculate KPIs](#collect-data-in-ie-flow-creator-and-calculate-kpis)
+  - [Configure Databus](#configure-databus)
+  - [Configure OPC UA Connector](#configure-OPC UA connector)
+  - [Collect data in Flow Creator and calculate KPIs](#collect-data-in-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
   - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
   
