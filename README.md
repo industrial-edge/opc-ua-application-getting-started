@@ -61,9 +61,9 @@ The used TIA Portal project can be found in the [miscellenous repository](https:
 
 You can find the further information about the following steps in the [docs](docs/Installation.md)
 
-- Configure IE Databus
-- Configure IE S7 Connector
-- Collect data in IE Flow Creator and calculate KPIs
+- Configure Databus
+- Configure OPC UA Connector
+- Collect data in Flow Creator and calculate KPIs
 - Create custom data source (new metadata, publish data to new topic)
 - Install and configure OPC UA configurator and application
 
