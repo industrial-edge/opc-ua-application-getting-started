@@ -25,7 +25,7 @@ In your IEM open the OPC UA Connector and launch the configurator.
 
 Add a data source:
 
-![S7_connector_data_source](graphics/S7_Connector_Data_Source.png)
+![Addsource](graphics/Addsource.PNG)
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
