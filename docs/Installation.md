@@ -7,7 +7,7 @@
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
   - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
   
-## Configure IE Databus
+## Configure Databus
 
 In your IEM open the Databus and launch the configurator.
 Add a user with this topic:
@@ -43,7 +43,7 @@ Deploy and start the project.
 
 ## Collect data in Flow Creator and calculate KPIs
 
-Open the IE Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
+Open the Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
@@ -53,7 +53,7 @@ When flow is imported, it should look like:
 
 ![FlowCreator.png](graphics/FlowCreator.png)
 
-After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
+After importing the JSON file, the password for Databus must be entered in the security settings of the MQTT-node.
 
 ![MQTTNode.PNG](graphics/MQTT_node.png)
 
