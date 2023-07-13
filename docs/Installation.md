@@ -15,7 +15,7 @@ Add a user with this topic:
 
 ![DatabusAdduser](graphics/DatabusAdduser.PNG)
 
-![Databus](graphics/Databus.PNG)
+![Databus1](graphics/Databus1.PNG)
 
 Deploy the configuration.
 
