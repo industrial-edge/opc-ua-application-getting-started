@@ -5,7 +5,7 @@
   - [Configure OPC UA connector](#configure-OPC-UA-connector)
   - [Collect data in Flow Creator and calculate KPIs](#collect-data-in-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
-  - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
+  - [Install and configure Edge OPC UA server configurator and application](#install-and-configure-opc-ua-configurator-and-application)
   
 ## Configure Databus
 
