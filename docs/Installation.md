@@ -85,13 +85,13 @@ Then, it formats the data in common payload format and sends it to topic `ie/d/j
 
 ![KPI_JSON.png](graphics/KPI_JSON.png)
 
-## Install and configure OPC UA configurator and application
+## Install and configure Edge OPC UA Server and application
 
-When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management -> Data Connections.
+When previous steps are completed and KPI is calculated, Edge OPC UA Server needs to be configured. This is done in Management -> Data Connections.
 
 ![OPCUAStatus.png](graphics/OPCUAStatus.png)
 
-First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like SIMATIC S7 connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
+First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like OPC UA Connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
 ![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
 
