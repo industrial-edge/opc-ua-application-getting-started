@@ -89,7 +89,7 @@ Then, it formats the data in common payload format and sends it to topic `ie/d/j
 
 When previous steps are completed and KPI is calculated, Edge OPC UA Server needs to be configured. This is done in Management -> Data Connections.
 
-![OPCUAStatus.png](graphics/OPCUAStatus.png)
+![OPCUAserver.PNG](graphics/OPCUAserver.PNG)
 
 First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like OPC UA Connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
