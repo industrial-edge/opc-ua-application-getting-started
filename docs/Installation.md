@@ -105,6 +105,6 @@ Next, select security policy under "Security" tab. For now, select security to *
 
 In "User Management" you can create a OPC UA users. Select **Enable guest access** and deselect- "User name and password authentication". Later, configure security according your demands.
 
-![OPCUAUser.png](graphics/OPCUAUser.png)
+![OpcuaUser.PNG](graphics/OpcuaUser.PNG)
 
 Finally click **Deploy**.
