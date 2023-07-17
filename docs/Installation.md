@@ -101,7 +101,7 @@ In "Data Points" tab, you can view and select all data points from configured da
 
 Next, select security policy under "Security" tab. For now, select security to **None**, deselect other 2 options and choose **Generate self signed certificate**.
 
-![OPCUASecurity.png](graphics/OPCUASecurity.png)
+![opcuasecurity.PNG](graphics/opcuasecurity.PNG)
 
 In "User Management" you can create a OPC UA users. Select **Enable guest access** and deselect- "User name and password authentication". Later, configure security according your demands.
 
