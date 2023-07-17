@@ -93,7 +93,7 @@ When previous steps are completed and KPI is calculated, Edge OPC UA Server need
 
 First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like OPC UA Connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
-![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
+![opcuaDatasource.PNG](graphics/opcuaDatasource.PNG)
 
 In "Data Points" tab, you can view and select all data points from configured data sources that needs to be available for external OPC UA clients.
 
