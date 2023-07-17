@@ -97,7 +97,7 @@ First, configure data source connection under "Data Source" tab. Insert new cust
 
 In "Data Points" tab, you can view and select all data points from configured data sources that needs to be available for external OPC UA clients.
 
-![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
+![opcuaDatapoints.PNG](graphics/opcuaDatapoints.PNG)
 
 Next, select security policy under "Security" tab. For now, select security to **None**, deselect other 2 options and choose **Generate self signed certificate**.
 
