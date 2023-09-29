@@ -1,49 +1,49 @@
 # Configuration
 
 - [Configuration](#configuration)
-  - [Configure IE Databus](#configure-ie-databus)
-  - [Configure IE SIMATIC S7 Connector](#configure-ie-simatic-s7-connector)
-  - [Collect data in IE Flow Creator and calculate KPIs](#collect-data-in-ie-flow-creator-and-calculate-kpis)
+  - [Configure Databus](#configure-databus)
+  - [Configure OPC UA connector](#configure-OPC-UA-connector)
+  - [Collect data in Flow Creator and calculate KPIs](#collect-data-in-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
-  - [Install and configure OPC UA configurator and application](#install-and-configure-opc-ua-configurator-and-application)
+  - [Install and configure Edge OPC UA Server and application](#install-and-configure-Edge-OPC-UA-Server-and-application)
   
-## Configure IE Databus
+## Configure Databus
 
-In your IEM open the IE Databus and launch the configurator.
+In your IEM open the Databus and launch the configurator.
 Add a user with this topic:
 `"ie/#"`
 
-![ie_databus_user](graphics/IE_Databus_User.png)
+![DatabusAdduser](graphics/DatabusAdduser.PNG)
 
-![ie_databus](graphics/IE_Databus.png)
+![Databus1](graphics/Databus1.PNG)
 
 Deploy the configuration.
 
-## Configure IE SIMATIC S7 Connector
+## Configure OPC UA Connector
 
-In your IEM open the SIMATIC S7 Connector and launch the configurator.
+In your IEM open the OPC UA Connector and launch the configurator.
 
 Add a data source:
 
-![S7_connector_data_source](graphics/S7_Connector_Data_Source.png)
+![Addsource](graphics/Addsource.PNG)
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
-![s7_connector_config](graphics/S7_Connector_Configuration.png)
+![OPCUAaddtags](graphics/OPCUAaddtags.PNG)
 
 >Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
 Edit the settings for Databus in upper right corner:
 
-![s7_connector_settings](graphics/S7_Connector_Settings.png)
+![OPCUASETTINGS](graphics/OPCUASETTINGS.PNG)
 
 >Hint: Username and password should be the same as it was set in the IE Databus configuration, e.g., "edge" / "edge".
 
 Deploy and start the project.
 
-## Collect data in IE Flow Creator and calculate KPIs
+## Collect data in Flow Creator and calculate KPIs
 
-Open the IE Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
+Open the Flow Creator App from the IED Web UI and import the [flows.json](../src/flows.json) file from the source folder.
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
@@ -53,7 +53,7 @@ When flow is imported, it should look like:
 
 ![FlowCreator.png](graphics/FlowCreator.png)
 
-After importing the JSON file, the password for IE Databus must be entered in the security settings of the MQTT-node.
+After importing the JSON file, the password for Databus must be entered in the security settings of the MQTT-node.
 
 ![MQTTNode.PNG](graphics/MQTT_node.png)
 
@@ -85,26 +85,26 @@ Then, it formats the data in common payload format and sends it to topic `ie/d/j
 
 ![KPI_JSON.png](graphics/KPI_JSON.png)
 
-## Install and configure OPC UA configurator and application
+## Install and configure Edge OPC UA Server and application
 
-When previous steps are completed and KPI is calculated, OPC UA needs to be configured. This is done in IE Management -> Data Connections.
+When previous steps are completed and KPI is calculated, Edge OPC UA Server needs to be configured. This is done in Management -> Data Connections.
 
-![OPCUAStatus.png](graphics/OPCUAStatus.png)
+![OPCUAserver.PNG](graphics/OPCUAserver.PNG)
 
-First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like SIMATIC S7 connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
+First, configure data source connection under "Data Source" tab. Insert new custom data source with KPI values. Here, you can also insert different connectors like OPC UA Connector, Modbus TCP connector, PROFINET IO Connector... When you finish, you must either click **Deploy** or click **Add Data Source** icon to reflect the changes on the corresponding data points.
 
-![OPCUAEditDataSource.png](graphics/OPCUAEditDataSource.png)
+![opcuaDatasource.PNG](graphics/opcuaDatasource.PNG)
 
 In "Data Points" tab, you can view and select all data points from configured data sources that needs to be available for external OPC UA clients.
 
-![OPCUAEditDataPoints.png](graphics/OPCUAEditDataPoints.png)
+![opcuaDatapoints.PNG](graphics/opcuaDatapoints.PNG)
 
 Next, select security policy under "Security" tab. For now, select security to **None**, deselect other 2 options and choose **Generate self signed certificate**.
 
-![OPCUASecurity.png](graphics/OPCUASecurity.png)
+![opcuasecurity.PNG](graphics/opcuasecurity.PNG)
 
 In "User Management" you can create a OPC UA users. Select **Enable guest access** and deselect- "User name and password authentication". Later, configure security according your demands.
 
-![OPCUAUser.png](graphics/OPCUAUser.png)
+![OpcuaUser.PNG](graphics/OpcuaUser.PNG)
 
 Finally click **Deploy**.
