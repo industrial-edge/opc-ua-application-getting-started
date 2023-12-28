@@ -45,12 +45,12 @@ In this example, data were collected from PLC with OPC UA connector and publish 
 
 ### Used components
 
-- Industrial Edge Management (IEM) V1.5.2-4
-- Databus V2.1.0
-- OPC UA Connector V1.8.1
-- Flow Creator V1.12.0
-- Industrial Edge Device V1.08.0-6
-- TIA Portal V17
+- Industrial Edge Management (IEM) V1.14.10
+- Databus V2.3.1
+- OPC UA Connector V2.0.1
+- Flow Creator V1.16.0
+- Industrial Edge Device V1.16.1.1-a
+- TIA Portal V18
 - PLC S7-1513
 - Web browser (Mozilla or Chrome)
 
