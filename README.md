@@ -47,7 +47,8 @@ In this example, data were collected from PLC with OPC UA connector and publish 
 
 - Industrial Edge Management (IEM) V1.14.10
 - Databus V2.2.0-3
-- OPC UA Connector V2.0.0-2
+- Common Configurator V1.9.0-4
+- OPC UA Connector V2.0.1-0
 - Flow Creator V1.16.0
 - Industrial Edge Device V1.16.1.1-a
 - TIA Portal V18
