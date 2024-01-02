@@ -34,8 +34,8 @@ In this example, data were collected from PLC with OPC UA connector and publish 
 
 ### Prerequisites
 
-- Access to an Industrial Edge Management System (IEM)
-- Onboarded Industial Edge Device (IED) on IEM
+- Access to an Industrial Edge Management System 
+- Onboarded Industial Edge Device on Industrial Edge Management 
 - Installed System Configurators for Databus
 - Installed System Apps Databus
 - Installed and running all connectors and configurators (OPC UA Connector, PROFINET IO, ModbusTCP) that Application uses
