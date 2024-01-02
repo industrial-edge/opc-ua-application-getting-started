@@ -39,15 +39,15 @@ In this example, data were collected from PLC with OPC UA connector and publish 
 - Installed System Configurators for Databus
 - Installed System Apps Databus
 - Installed and running all connectors and configurators (OPC UA Connector, PROFINET IO, ModbusTCP) that Application uses
-- Installed OPC UA configurator and OPC UA Application
+- Installed OPC UA connector
 - Installed Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
 
 - Industrial Edge Management (IEM) V1.14.10
-- Databus V2.3.1
-- OPC UA Connector V2.0.1
+- Databus V2.2.0-3
+- OPC UA Connector V2.0.0-2
 - Flow Creator V1.16.0
 - Industrial Edge Device V1.16.1.1-a
 - TIA Portal V18
@@ -66,7 +66,7 @@ You can find the further information about the following steps in the [docs](doc
 - Configure OPC UA Connector
 - Collect data in Flow Creator and calculate KPIs
 - Create custom data source (new metadata, publish data to new topic)
-- Install and configure OPC UA configurator and application
+- Install and configure OPC UA connector 
 
 ## Usage
 
