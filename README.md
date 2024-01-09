@@ -75,7 +75,7 @@ When previous steps are configured correctly, data are available in OPC UA Appli
 
 ![/UAexpertopcuaPNG.PNG](docs/graphics/UAexpertopcuaPNG.PNG)
 
-![UA_Expert.png](docs/graphics/OPCUA_ADDTAGS.PNG)
+![uaexpertdatasource.PNG](docs/graphics/uaexpertdatasource.PNG)
 
 ## Documentation
 
