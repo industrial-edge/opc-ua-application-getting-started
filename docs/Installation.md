@@ -50,10 +50,9 @@ This configuration done localy at the industrial edge Device
 
 Add a data source:
 
+![opcualocaldatasource](graphics/opcualocaldatasource.png) 
 
-In your IEM open the OPC UA Connector and launch the configurator.
-
-Add a data source:
+Add a data Databus credentials in common configurator:
 
 ![Addsource](graphics/Addsource.PNG)
 
