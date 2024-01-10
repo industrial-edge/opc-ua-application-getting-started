@@ -1,11 +1,24 @@
 # Configuration
 
 - [Configuration](#configuration)
+  - [Configure PLC Connection](#configure-PLC_Connections)
   - [Configure Databus](#configure-databus)
   - [Configure OPC UA connector](#configure-OPC-UA-connector)
   - [Collect data in Flow Creator and calculate KPIs](#collect-data-in-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
   - [Install and configure Edge OPC UA Server and application](#install-and-configure-Edge-OPC-UA-Server-and-application)
+
+
+## Configure PLC Connection
+
+To read the data from the PLC and provide the data, we will use OPC UA connector to establish connection with the PLC via OPC UA.
+
+Activate the OPC UA server
+
+in oeder to build this infrastructure, these apps must be configured properly:
+  - Databus
+  - OPC UA Connector 
+
   
 ## Configure Databus
 
