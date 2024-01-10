@@ -15,7 +15,9 @@ To read the data from the PLC and provide the data, we will use OPC UA connector
 
 Activate the OPC UA server
 
-in oeder to build this infrastructure, these apps must be configured properly:
+![Activateopcuaserver.png](graphics/Activateopcuaserver.png)
+
+in order to build this infrastructure, these apps must be configured properly:
   - Databus
   - OPC UA Connector 
 
@@ -23,6 +25,7 @@ in oeder to build this infrastructure, these apps must be configured properly:
 ## Configure Databus
 
 In your IEM open the Databus and launch the configurator.
+
 Add a user with this topic:
 `"ie/#"`
 
@@ -33,6 +36,20 @@ Add a user with this topic:
 Deploy the configuration.
 
 ## Configure OPC UA Connector
+
+OPC UA connector can be configured via both bellow mentioned options
+
+###### Local configuration with industrial edge device
+###### Central configuration with industrial edge managment
+
+#### Local Configuration
+
+In your industrial edge devic open the common congigurator and configure the OPC UA connector 
+
+This configuration done localy at the industrial edge Device
+
+Add a data source:
+
 
 In your IEM open the OPC UA Connector and launch the configurator.
 
