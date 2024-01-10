@@ -39,8 +39,8 @@ Deploy the configuration.
 
 OPC UA connector can be configured via both bellow mentioned options
 
-###### Local configuration with industrial edge device
-###### Central configuration with industrial edge managment
+###### a) Local configuration with industrial edge device
+###### b) Central configuration with industrial edge managment
 
 #### Local Configuration
 
