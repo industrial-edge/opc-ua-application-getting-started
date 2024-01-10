@@ -62,7 +62,9 @@ Deploy and start the project.
 
 Import the tags to OPC UA connector, In common configurator, From OPC UA.xml file exported from TIA portal:
 
-![Opcuaxml](graphics/Opcuaxml.PNG) graphics/Opcuaxml.PNG
+![Opcuaxml](graphics/Opcuaxml.PNG) 
+
+![importopcuatags](graphics/importopcuatags.PNG) 
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
