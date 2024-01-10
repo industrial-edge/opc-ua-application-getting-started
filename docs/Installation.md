@@ -80,6 +80,9 @@ This configurator done centraly at IEM
 
 Add a data source:
 
+![opcuacentraldata](graphics/opcuacentraldata.png)
+
+Browse the tags from PLC
 >Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
 Edit the settings for Databus in upper right corner:
