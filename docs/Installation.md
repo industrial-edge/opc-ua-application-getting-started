@@ -60,7 +60,9 @@ Hint: Username and password should be the same as was set in the databus configu
 
 Deploy and start the project.
 
-Import the tags to OPC UA connector, In common configurator, From OPC UA.xml file exported from TIA portal
+Import the tags to OPC UA connector, In common configurator, From OPC UA.xml file exported from TIA portal:
+
+![Opcuaxml](graphics/Opcuaxml.PNG) graphics/Opcuaxml.PNG
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
