@@ -68,7 +68,17 @@ Import the tags to OPC UA connector, In common configurator, From OPC UA.xml fil
 
 Add these four tags GDB.signal.energySignals.energyConsumptionHeatingTank, GDB.signals.energySignals.energyConsumptionFillingBottles, GDB.process.numberProduced, GDB.process.numberFaulty (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
-![OPCUAaddtags](graphics/OPCUAaddtags.PNG)
+![opcualocaldeploytags](graphics/opcualocaldeploytags.png)
+
+>Hint! Please use the same variable names as shown in the screenshot, otherwise the flow creator script must be adjusted.
+
+#### Central Configuration
+
+In your IEM open the OPC UA Connector and launch the configurator.
+
+This configurator done centraly at IEM
+
+Add a data source:
 
 >Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
