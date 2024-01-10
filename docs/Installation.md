@@ -54,7 +54,13 @@ Add a data source:
 
 Add a data Databus credentials in common configurator:
 
-![Addsource](graphics/Addsource.PNG)
+![Databus_IIH](graphics/Databus_IIH.PNG) 
+
+Hint: Username and password should be the same as was set in the databus configuration, e.g., "edge" / "edge".
+
+Deploy and start the project.
+
+Import the tags to OPC UA connector, In common configurator, From OPC UA.xml file exported from TIA portal
 
 Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
