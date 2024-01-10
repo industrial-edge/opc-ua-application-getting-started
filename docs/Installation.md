@@ -66,7 +66,7 @@ Import the tags to OPC UA connector, In common configurator, From OPC UA.xml fil
 
 ![importopcuatags](graphics/importopcuatags.PNG) 
 
-Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
+Add these four tags GDB.signal.energySignals.energyConsumptionHeatingTank, GDB.signals.energySignals.energyConsumptionFillingBottles (since we want to write variable values into the PLC, set "Read & Write" as access mode):
 
 ![OPCUAaddtags](graphics/OPCUAaddtags.PNG)
 
