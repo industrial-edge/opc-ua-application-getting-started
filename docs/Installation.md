@@ -40,13 +40,13 @@ Deploy the configuration.
 OPC UA connector can be configured via both bellow mentioned options
 
 ###### a) Local configuration with industrial edge device
-###### b) Central configuration with industrial edge managment
+###### b) Central configuration with industrial edge management
 
 #### Local Configuration
 
-In your industrial edge devic open the common congigurator and configure the OPC UA connector 
+In your industrial edge device open the common configurator and configure the OPC UA connector 
 
-This configuration done localy at the industrial edge Device
+This configuration done locally at the industrial edge Device
 
 Add a data source:
 
@@ -76,7 +76,7 @@ Add these four tags GDB.signal.energySignals.energyConsumptionHeatingTank, GDB.s
 
 In your IEM open the OPC UA Connector and launch the configurator.
 
-This configurator done centraly at IEM
+This configurator done centrally at IEM
 
 Add a data source:
 
