@@ -106,7 +106,7 @@ Open the Flow Creator App from the IED Web UI and import the [flows.json](../src
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
-![importFlow2.PNG](graphics/importFlow2.png)
+![Clipboard.PNG](graphics/Clipboard.PNG)
 
 When flow is imported, it should look like:
 
