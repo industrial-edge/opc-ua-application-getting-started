@@ -60,7 +60,7 @@ Hint: Username and password should be the same as was set in the databus configu
 
 Deploy and start the project.
 
-Import the tags to OPC UA connector, In common configurator, From OPC UA.xml file exported from TIA portal:
+Import the tags to OPC UA connector, From OPC UA.xml file exported from TIA portal In common configurator:
 
 ![Opcuaxml](graphics/Opcuaxml.PNG) 
 
