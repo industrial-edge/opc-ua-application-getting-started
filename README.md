@@ -71,7 +71,7 @@ You can find the further information about the following steps in the [docs](doc
 
 ## Usage
 
-When previous steps are configured correctly, data are available in OPC UA Application. Use UA Expert to connect to OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:4840`. You can also use second IED. Then data is obtained via OPC UA Connector.
+When previous steps are configured correctly, data are available in OPC UA Application. Use UA Expert to connect to OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:48010`. You can also use second IED. Then data is obtained via OPC UA Connector.
 
 ![/UAexpertopcuaPNG.PNG](docs/graphics/UAexpertopcuaPNG.PNG)
 
