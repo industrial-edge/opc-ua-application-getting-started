@@ -1,15 +1,31 @@
 # Configuration
 
 - [Configuration](#configuration)
+  - [Configure PLC Connection](#configure-PLC_Connections)
   - [Configure Databus](#configure-databus)
   - [Configure OPC UA connector](#configure-OPC-UA-connector)
   - [Collect data in Flow Creator and calculate KPIs](#collect-data-in-flow-creator-and-calculate-kpis)
   - [Create custom data source (new metadata, publish data to new topic)](#create-custom-data-source-new-metadata-publish-data-to-new-topic)
   - [Install and configure Edge OPC UA Server and application](#install-and-configure-Edge-OPC-UA-Server-and-application)
+
+
+## Configure PLC Connection
+
+To read the data from the PLC and provide the data, we will use OPC UA connector to establish connection with the PLC via OPC UA.
+
+Activate the OPC UA server
+
+![Activateopcuaserver.png](graphics/Activateopcuaserver.png)
+
+in order to build this infrastructure, these apps must be configured properly:
+  - Databus
+  - OPC UA Connector 
+
   
 ## Configure Databus
 
 In your IEM open the Databus and launch the configurator.
+
 Add a user with this topic:
 `"ie/#"`
 
@@ -21,15 +37,58 @@ Deploy the configuration.
 
 ## Configure OPC UA Connector
 
-In your IEM open the OPC UA Connector and launch the configurator.
+OPC UA connector can be configured via both bellow mentioned options
+
+###### a) Local configuration with industrial edge device
+###### b) Central configuration with industrial edge management
+
+#### Local Configuration
+
+In your industrial edge device open the common configurator and configure the OPC UA connector 
+
+This configuration done locally at the industrial edge Device
 
 Add a data source:
 
-![Addsource](graphics/Addsource.PNG)
+![opcualocaldatasource](graphics/opcualocaldatasource.png) 
 
-Add needed tags (since we want to write variable values into the PLC, set "Read & Write" as access mode):
+Add a data Databus credentials in common configurator:
 
-![OPCUAaddtags](graphics/OPCUAaddtags.PNG)
+![Databus_IIH](graphics/Databus_IIH.PNG) 
+
+Hint: Username and password should be the same as was set in the databus configuration, e.g., "edge" / "edge".
+
+Deploy and start the project.
+
+Import the tags to OPC UA connector, From OPC UA.xml file exported from TIA portal In common configurator:
+
+![Opcuaxml](graphics/Opcuaxml.PNG) 
+
+![importopcuatags](graphics/importopcuatags.PNG) 
+
+Add these four tags GDB.signal.energySignals.energyConsumptionHeatingTank, GDB.signals.energySignals.energyConsumptionFillingBottles, GDB.process.numberProduced, GDB.process.numberFaulty (since we want to write variable values into the PLC, set "Read & Write" as access mode):
+
+![opcualocaldeploytags](graphics/opcualocaldeploytags.png)
+
+>Hint! Please use the same variable names as shown in the screenshot, otherwise the flow creator script must be adjusted.
+
+#### Central Configuration
+
+In your IEM open the OPC UA Connector and launch the configurator.
+
+This configurator done centrally at IEM
+
+Add a data source:
+
+![opcuacentraldata](graphics/opcuacentraldata.png)
+
+Browse the tags from PLC
+
+![Browsetagscentralopcua](graphics/Browsetagscentralopcua.PNG)
+
+Add these four tags GDB.signal.energySignals.energyConsumptionHeatingTank, GDB.signals.energySignals.energyConsumptionFillingBottles, GDB.process.numberProduced, GDB.process.numberFaulty (since we want to write variable values into the PLC, set "Read & Write" as access mode):
+
+![Deploytagscentralopcua](graphics/Deploytagscentralopcua.PNG) 
 
 >Hint: Use the same tag names “ProducedBottles” and “FaultyBottles”. This names are used to calculate KPI in Flow Creator. If you change the names here, change it also in Flow Creator.
 
@@ -47,7 +106,7 @@ Open the Flow Creator App from the IED Web UI and import the [flows.json](../src
 
 ![importFlowCreator.PNG](graphics/importFlowCreator.png)
 
-![importFlow2.PNG](graphics/importFlow2.png)
+![Clipboard.PNG](graphics/Clipboard.PNG)
 
 When flow is imported, it should look like:
 

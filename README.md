@@ -25,32 +25,33 @@ Industrial Edge OPC UA application acts as OPC UA server. It connects to the dat
 
 ### General Task
 
-In this example, data were collected from PLC with OPC UA connector and publish to Databus. From that data, in Flow Creator, KPIs were calculated and new custom data source is created. OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another IED can be used or some another application like UA Expert.
+In this example, data were collected from PLC with OPC UA connector and publish to Databus. From that data, in Flow Creator, KPIs were calculated and new custom data source is created. OPC UA Application, subscribes to these two data sources and makes them available for OPC UA clients. As client, another Industrial Edge device can be used or some another application like UA Expert.
 
-![OPCUAoverview.PNG](docs/graphics/OPCUAoverview.PNG)
+![opcnew.PNG](docs/graphics/opcnew.PNG) 
 
 
 ## Requirements
 
 ### Prerequisites
 
-- Access to an Industrial Edge Management System (IEM)
-- Onboarded Industial Edge Device (IED) on IEM
+- Access to an Industrial Edge Management System 
+- Onboarded Industial Edge Device on Industrial Edge Management 
 - Installed System Configurators for Databus
 - Installed System Apps Databus
 - Installed and running all connectors and configurators (OPC UA Connector, PROFINET IO, ModbusTCP) that Application uses
-- Installed OPC UA configurator and OPC UA Application
+- Installed OPC UA connector
 - Installed Flow Creator
 - Google Chrome (Version ≥ 72) or Firefox (Version ≥ 62)
 
 ### Used components
 
-- Industrial Edge Management (IEM) V1.5.2-4
-- Databus V2.1.0
-- OPC UA Connector V1.8.1
-- Flow Creator V1.12.0
-- Industrial Edge Device V1.08.0-6
-- TIA Portal V17
+- Industrial Edge Management (IEM) V1.14.10
+- Databus V2.2.0-3
+- Common Configurator V1.9.0-4
+- OPC UA Connector V2.0.1-0
+- Flow Creator V1.16.0
+- Industrial Edge Device V1.16.1.1-a
+- TIA Portal V18
 - PLC S7-1513
 - Web browser (Mozilla or Chrome)
 
@@ -66,15 +67,15 @@ You can find the further information about the following steps in the [docs](doc
 - Configure OPC UA Connector
 - Collect data in Flow Creator and calculate KPIs
 - Create custom data source (new metadata, publish data to new topic)
-- Install and configure OPC UA configurator and application
+- Install and configure OPC UA connector 
 
 ## Usage
 
 When previous steps are configured correctly, data are available in OPC UA Application. Use UA Expert to connect to OPC UA Application at end point `opc.tcp://Ip-Address-of-Edge-Device:48010`. You can also use second IED. Then data is obtained via OPC UA Connector.
 
-![UA_Expert.png](docs/graphics/UA_Expert.png)
+![/UAexpertopcuaPNG.PNG](docs/graphics/UAexpertopcuaPNG.PNG)
 
-![UA_Expert.png](docs/graphics/OPCUA_ADDTAGS.PNG)
+![uaexpertdatasource.PNG](docs/graphics/uaexpertdatasource.PNG)
 
 ## Documentation
 
@@ -89,12 +90,9 @@ When previous steps are configured correctly, data are available in OPC UA Appli
  
 ## Contribution
 
-Thank you for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section.
-
-Additionally everybody is free to propose any changes to this repository using Pull Requests.
+Thank you for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section. Additionally everybody is free to propose any changes to this repository using Pull Requests.
 
 If you haven't previously signed the [Siemens Contributor License Agreement](https://cla-assistant.io/industrial-edge/) (CLA), the system will automatically prompt you to do so when you submit your Pull Request. This can be conveniently done through the CLA Assistant's online platform. Once the CLA is signed, your Pull Request will automatically be cleared and made ready for merging if all other test stages succeed.
-
  
 
 
